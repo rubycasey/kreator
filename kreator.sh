@@ -110,7 +110,7 @@ case $option01 in
 			git clone https://github.com/icorbrey/sauron.git
 			cd sauron
 			sudo chmod +x sauron
-			export PATH="$PATH:~/.sauron"
+			export PATH="$PATH:~/git/etc/.sauron"
 
 			;;
 		2) #exit
