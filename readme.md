@@ -6,10 +6,14 @@ It basically just installs common packages I end up installing on every system I
 
 ## How to use
 Make it executable:
-``chmod +x kreator.sh``
+
+```chmod +x kreator.sh```
+
 then, run the program and follow the prompts.
-``./kreator.sh``
-NOTE: The program only has support for pacman based systems at the moment.
+
+```./kreator.sh```
+
+**NOTE:** The program only has support for pacman based systems at the moment.
 
 ## Where does the name come from?
 I was literally in a discord call with a friend and said "give me a name for a program" and he said "creator but with a k" so that's where we are lol.
