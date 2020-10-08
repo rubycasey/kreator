@@ -1,4 +1,4 @@
-# KREATOR: THE INSTALL SCRIPT
+# KREATOR: THE POST-INSTALL SCRIPT
 This script installs and configures your GNU/Linux based OS to Ruby's liking.
 
 ## What it does
