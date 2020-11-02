@@ -31,13 +31,13 @@ case $option01 in
 		echo "--"
 		echo "Checking for updates..."
 		sudo pacman -Sy
-		echo "Installing CLI tools..."
-		sudo pacman -S vim neofetch glances python3 cmatrix
+		echo "Installing CLI tools and services..."
+		sudo pacman -S man openssh wget curl git vim neofetch htop glances python3 cmatrix screen
 		echo "--"
 
 		# Installing GUI Tools
 		echo "Installing GUI Programs..."
-		sudo pacman -S firefox vlc
+		sudo pacman -S thunderbird vlc
 		echo "--"
 
 		# AUR
@@ -51,17 +51,25 @@ case $option01 in
 			
 			# Setup
 			echo "Making build directories..."
-			mkdir ~/git
-			mkdir ~/git/aur
+			mkdir ~/Git
+			mkdir ~/Git/aur
 			echo "Installing development tools..."
 			sudo pacman -S base-devel
-
+			
+			## Fonts
 			# Microsoft Fonts
 			Echo "Installing Microsoft Fonts for increased compatibility."
-			cd ~/git/aur
+			cd ~/Git/aur
 			git clone https://aur.archlinux.org/ttf-ms-fonts.git
 			cd ttf-ms-fonts
 			makepkg -sic
+
+			# Emoji
+			echo "Installing Emojis"
+			cd ~/Git/aur
+			git clone https://aur.archlinux.org/ttf-twemoji.git
+			cd ttf-twemoji
+			makepkg -sri
 
 			# AUR GUI Packages
 			echo "--"
@@ -72,12 +80,19 @@ case $option01 in
 			read -p "Option: " aurGUI
 			case $aurGUI in
 			1)
+				# Brave Browser
+				echo "Installing Brave Browser"
+				cd ~/Git/aur
+				git clone https://aur.archlinux.org/brave-bin.git
+				cd brave-bin
+				makepkg -sri
+
 				# OnlyOffice
 				echo "Installing OnlyOffice (This one takes a while)"
-				cd ~/git/aur
+				cd ~/Git/aur
 				git clone https://aur.archlinux.org/onlyoffice-bin
 				cd onlyoffice-bin
-				makepkg -sic
+				makepkg -sri
 				;;
 			2)
 				#exit
@@ -119,7 +134,7 @@ case $option01 in
 
 
 	elif [ $packageManager = 2 ]; then
-		echo "You selected aptitude."
+		echo "You selected aptitude, which isn't currenly supported. Ending script..."
 	fi
 
 	echo "--"
@@ -128,7 +143,7 @@ case $option01 in
 
 2) # Theme Install
 	echo "--"
-	echo "Installing gtk theme: Ant-Dracula..."
+	echo "Themes are not yet supported, sorry. Ending script..."
 	;;
 
 
@@ -139,3 +154,4 @@ case $option01 in
 4) # Exit
 
 esac
+Installing gtk theme: Ant-Dracula...
