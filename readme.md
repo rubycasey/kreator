@@ -3,16 +3,21 @@ This script installs and configures your GNU/Linux based OS to Ruby's liking.
 ```NOTE: as of v0.2.0 the script only supports the XBPS package manager. For Arch support, try v0.1.2.```
 
 ## What it does
-It basically just installs common packages I end up installing on every system I setup, does some configuring, and usually installs theme files I commonly use. You can pick and choose components by following the prompts, for example if you *only* want to install cli tools, you can skip the gui tools installation, or the theme installation.
+It basically just installs common packages I end up installing on every system I setup, does some configuring, and usually installs theme files I commonly use. Packages will have options for different package managers, the script will pull lists from external files, making it fairly easy to customize.
 
 ## How to use
+Simply run it with python3.
+
+```python kreator.py```
+
+## How to use (v0.1.2)
 Make it executable:
 
-```chmod +x kreator.sh```
+```chmod +x kreator-old.sh```
 
 then, run the program and follow the prompts.
 
-```./kreator.sh```
+```./kreator-old.sh```
 
 **NOTE:** The program only has support for pacman based systems at the moment.
 
