@@ -20,7 +20,9 @@ from config.arch import pacmanPackageList
 
 # Importing Scripts
 from packages import installPackages, installAurPackage, changeDirToHome
-versionNum = "v0.2.1";
+from configs import cfg_i3Gruvbox
+from themes import thm_gruvboxDark
+versionNum = "v0.2.2";
 
 # Startup
 #os.system(clear)
@@ -57,9 +59,19 @@ if kreatorMode == "1":
     print('===========')
     print("Invalid package manager.")
 elif kreatorMode == "2":
-  print("Not available at the moment.")
+  print("Please choose a config from the list below.")
+  print("1) Ruby's i3 Gruxbox")
+  configSelection = input("Selection: ")
+  print('===========')
+  if configSelection == "1":
+    cfg_i3Gruvbox()
 elif kreatorMode == "3":
-  print("Not available at the moment.")
+  print("Please choose a config from the list below.")
+  print("1) Gruvbox Dark")
+  configSelection = input("Selection: ")
+  print('===========')
+  if configSelection == "1":
+    thm_gruvboxDark()
 elif kreatorMode == "4":
   # I'm using option 4 as a hidden debug menu thingy, for when
   # I'm testing things and don't want to go through thr whole

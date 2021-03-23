@@ -1,6 +1,5 @@
 ## Roadmap:
 # Things I want to add:
 
-1) Add Arch support
-2) Curses frontend?
-3) Add Debian/Ubuntu (apt in general) support
+1) Curses frontend?
+2) Add Debian/Ubuntu (apt in general) support
