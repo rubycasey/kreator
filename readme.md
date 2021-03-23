@@ -1,6 +1,6 @@
 # KREATOR: THE POST-INSTALL SCRIPT
 This script installs and configures your GNU/Linux based OS to Ruby's liking.
-```NOTE: as of v0.2.0 the script only supports the XBPS package manager. For Arch support, try v0.1.2.```
+```NOTE: as of v0.2.1 the script only supports the XBPS and Pacman (plus AUR) package managers. Apt support will be added soon.```
 
 ## What it does
 It basically just installs common packages I end up installing on every system I setup, does some configuring, and usually installs theme files I commonly use. Packages will have options for different package managers, the script will pull lists from external files, making it fairly easy to customize.

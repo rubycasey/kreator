@@ -10,19 +10,17 @@
     This is the new version of Kreator, now written in python!
   Feel free to customize and play with it to your heart's content.
 """
-def importBase():
-  # Importing libaries
-  import os
-  import sys
+# Importing modules
+import os
+import sys
 
-  # Importing configs
-  from config.xbps import xbpsPackageList
-  from config.arch import pacmanPackageList
+# Importing configs
+from config.xbps import xbpsPackageList
+from config.arch import pacmanPackageList
 
-# Importing base components
-importBase();
-from packages import installPackages
-versionNum = "v0.2.0";
+# Importing Scripts
+from packages import installPackages, installAurPackage, changeDirToHome
+versionNum = "v0.2.1";
 
 # Startup
 #os.system(clear)
@@ -46,8 +44,10 @@ if kreatorMode == "1":
     print("Apt not yet supported.")
     print('===========')
   elif packageManagerMode == "2":
-    print("Pacman not yet supported.")
+    print("Pacman selected, you may be required to enter your password.")
     print('===========')
+    blankInput = input('Press enter to continue...')
+    installPackages("pacman")
   elif packageManagerMode == "3":
     print("XBPS selected, you may be required to enter your password.")
     print('===========')
@@ -60,6 +60,11 @@ elif kreatorMode == "2":
   print("Not available at the moment.")
 elif kreatorMode == "3":
   print("Not available at the moment.")
+elif kreatorMode == "4":
+  # I'm using option 4 as a hidden debug menu thingy, for when
+  # I'm testing things and don't want to go through thr whole
+  # prompt.
+  blankInput = input("Debug mode entered, press enter to continue...")
 else:
   print("Invalid option selected.")
 
