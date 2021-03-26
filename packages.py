@@ -29,9 +29,9 @@ def aurDirSetup():
 
 # Scripts for installing packages.
 def installPackages(packageManager):
-    packageList = "";
+    packageList = ""
     if packageManager == "xbps":
-        print("Set to install the following: %s."%(xbpsPackageList));
+        print("Set to install the following: %s."%(xbpsPackageList))
         for x in range(len(xbpsPackageList)):
             if packageList == "":
                 packageList = xbpsPackageList[0]
@@ -44,7 +44,7 @@ def installPackages(packageManager):
         #    os.system('sudo xbps-install -Sy %s'%(x))
     elif packageManager == "pacman":
         # Arch repos.
-        print("Set to install the following: %s."%(pacmanPackageList));
+        print("Set to install the following: %s."%(pacmanPackageList))
         for x in range(len(pacmanPackageList)):
             if packageList == "":
                 packageList = pacmanPackageList[0]
@@ -58,22 +58,22 @@ def installPackages(packageManager):
         print("Would you like to install AUR packages? (this may be time consuming)")
         print("1) Yes.")
         print("2) No.")
-        aurToggle = input("Selection: ")
-        if aurToggle == "1":
+        aurToggle = int(input("Selection: "))
+        if aurToggle == 1:
             print("Would you like to use an AUR helper?")
             print("1) Yes.")
             print("2) No.")
-            aurHelperToggle = input("Selection: ")
-            if aurHelperToggle == "1":
+            aurHelperToggle = int(input("Selection: "))
+            if aurHelperToggle == 1:
                 print("Select an AUR helper below.")
                 print("1) Yay")
                 print("2) Cancel Helper Selection")
-                aurHelper = input("Selection: ")
-                if aurHelper == "1":
+                aurHelper = int(input("Selection: "))
+                if aurHelper == 1:
                     packageList = ""
                     installAurPackage("yay")
                     changeDirToHome()
-                    print("Set to install the following: %s."%(aurPackageList));
+                    print("Set to install the following: %s."%(aurPackageList))
                     for x in range(len(aurPackageList)):
                         if packageList == "":
                             packageList = aurPackageList[0]
@@ -89,15 +89,12 @@ def installPackages(packageManager):
         else:
             print("Skipping AUR packages.")
     elif packageManager == "apt":
-        print("Apt chosen, but not yet supported.");
+        print("Apt chosen, but not yet supported.")
     else:
         print("Invalid package manager chosen.")
 
 def installAurPackage(aurPackageName):
     # Manually clones and build package from AUR.
-
-    #debug: print(packageName)
-
     aurDirSetup()
 
     # Building package
