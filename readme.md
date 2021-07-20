@@ -10,7 +10,7 @@ Simply run it with python3.
 
 ```python kreator.py```
 
-## How to use (v0.1.2)
+## How to use legacy version (v0.1.2)
 Make it executable:
 
 ```chmod +x kreator-old.sh```
